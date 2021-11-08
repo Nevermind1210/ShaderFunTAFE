@@ -7,12 +7,14 @@ using UnityEngine.Rendering.PostProcessing;
 public class EnableDisable : MonoBehaviour
 { 
     public PostProcessProfile postProcessProfile;
-
+    
+    
+    public Material material;
     // Start is called before the first frame update
     void Start()
     {
         PostEffectEnabled(false, postProcessProfile); // We will ALWAYS disable it.
-        
+        material = GetComponent<Material>();
     }
     
     /// <summary>
@@ -29,13 +31,32 @@ public class EnableDisable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///  This function just helps me set the material for trigger events
+    /// </summary>
+    /// <param name="_material"></param>
+    /// <param name="_isEnabled"></param>
+    private void SetMaterial(Material _material, bool _isEnabled)
+    {
+        if (_isEnabled)
+        {
+            material = _material;
+        }
+        else
+        {
+            material = null;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        PostEffectEnabled(true, postProcessProfile);
+        //PostEffectEnabled(true, postProcessProfile);
+        SetMaterial(material, true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        PostEffectEnabled(false, postProcessProfile);
+        //PostEffectEnabled(false, postProcessProfile);
+        SetMaterial(material, false);
     }
 }
