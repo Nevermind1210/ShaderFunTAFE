@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fog Scene.unity
     guid: 4d7c1e30118c81e48ba7aec4d56eabe8
+  - enabled: 1
+    path: Assets/Scenes/Force Field Scene.unity
+    guid: f059dd5f76253404da235f64f7590233
+  - enabled: 1
+    path: Assets/Scenes/Fireflies.unity
+    guid: 174fde0107db119438e735a21315c602
+  - enabled: 1
+    path: Assets/Scenes/Space Cube.unity
+    guid: 27897362f98903749818be377f860a23
   m_configObjects: {}
